@@ -1,4 +1,6 @@
-![](https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg)
+![image](https://github.com/user-attachments/assets/a6aee016-71e8-4f04-9e8e-1ed57761959b)
+
+Link to Register: https://hacktoberfest.com/
 
 What can I contribute?
 -A list of awesome beginner-friendly animations.
