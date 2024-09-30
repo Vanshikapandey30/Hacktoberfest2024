@@ -34,13 +34,13 @@ git clone --depth 1 https://github.com/<your_name>/HactoberFest2024
 **3.** Navigate to the project directory :file_folder: .
 
 ```
-cd HacktoberFest2021
+cd HacktoberFest2024
 ```
 
 **4.** Add a reference(remote) to the original repository.
 
 ```
-git remote add upstream https://github.com/Vanshikapandey30/HacktoberFest2021.git
+git remote add upstream https://github.com/Vanshikapandey30/HacktoberFest2024.git
 ```
 
 **5.** Check the remotes for this repository.
