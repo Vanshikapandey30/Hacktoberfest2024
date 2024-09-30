@@ -1,7 +1,7 @@
 ![image](https://github.com/user-attachments/assets/a6aee016-71e8-4f04-9e8e-1ed57761959b)
 
 Link to Register: https://hacktoberfest.com/
-
+You can check the label of this Repo by going to: Pull Requests -> Labels
 What can I contribute?
 -A list of awesome beginner-friendly animations.
 -Creative & simple landing pages.
