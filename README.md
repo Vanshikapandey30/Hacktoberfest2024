@@ -28,7 +28,7 @@ All the best for your Hacktoberfest Journey!
 **2.**  Clone your forked copy of the project.
 
 ```
-git clone --depth 1 https://github.com/<your_name>/HactoberFest2024
+git clone --depth 1 https://github.com/<your_name>/HacktoberFest2024
 ```
 
 **3.** Navigate to the project directory :file_folder: .
