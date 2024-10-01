@@ -1,0 +1,43 @@
+# My First Open Source Contribution
+
+Hello, GitHub community!
+
+I'm excited to share my first experience contributing to open source. As a newcomer to the world of collaborative development, I was both nervous and thrilled to take this step.
+
+## The Project
+
+I chose to contribute to [Project Name], a [brief description of the project]. This project caught my attention because [reason for choosing this project].
+
+## My Contribution
+
+My contribution involved [brief description of what you did, e.g., fixing a bug, adding a feature, improving documentation]. Here's a quick overview of what I did:
+
+1. [Step 1]
+2. [Step 2]
+3. [Step 3]
+
+## Challenges and Learnings
+
+During this process, I faced a few challenges:
+
+- [Challenge 1]
+- [Challenge 2]
+
+But I also learned a lot:
+
+- [Learning 1]
+- [Learning 2]
+
+## The Community
+
+I was amazed by the supportive and welcoming nature of the open source community. [Mention any specific interactions or help you received].
+
+## Moving Forward
+
+This experience has motivated me to continue contributing to open source projects. I'm looking forward to learning more and being a part of this incredible community.
+
+If you're considering contributing to open source, I encourage you to take the leap. It's a rewarding experience that not only improves your skills but also allows you to be part of something bigger.
+
+Happy coding, everyone!
+
+Gomez
