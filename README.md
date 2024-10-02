@@ -20,4 +20,4 @@ This is a C++ application that solves Sudoku puzzles using the backtracking algo
 - Displays the solved Sudoku board.
 
 ## How it Works
-The application uses backtracking to solve Sudoku. The algorithm attempts to place numbers in empty cells, recursively trying every possible number that follows Sudoku rules (no duplicates in the same row, column, or subgrid). If an invalid placement is found, it backtracks and tries another number.
+The application uses backtracking to solve Sudoku. The algorithm attempts to place numbers in empty cells, recursively trying every possible number that follows Sudoku rules (no duplicates in the same row,column,or subgrid). If an invalid placement is found, it backtracks and tries another number.
