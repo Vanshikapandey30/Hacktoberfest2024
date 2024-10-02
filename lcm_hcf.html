@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LCM & HCF Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>LCM & HCF Calculator</h1>
+    <div class="calculator">
+      <label for="num1">Enter First Number:</label>
+      <input type="number" id="num1" placeholder="First Number" required>
+      <label for="num2">Enter Second Number:</label>
+      <input type="number" id="num2" placeholder="Second Number" required>
+
+      <div class="buttons">
+        <button id="calcLCM" onclick="calculateLCM()">Calculate LCM</button>
+        <button id="calcHCF" onclick="calculateHCF()">Calculate HCF</button>
+      </div>
+
+      <div id="result"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
