@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bipartite Graphs</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1>BIPARTITE GRAPHS</h1>
+    <h2>To find if a given graph can form as a Bipartite Graph or not</h2>
+    <p>A bipartite graph can be colored with two colors such that no two adjacent vertices share the same color. This
+        means we can divide the graph’s vertices into two distinct sets where:</p>
+    <ul>
+        <li>All edges connect vertices from one set to vertices in the other set.</li>
+        <li>No edges exist between vertices within the same set.</li>
+    </ul>
+    <br>
+    <section>
+        <div class="graph-section">
+            <div class="graph-details">
+                <div class="numberOfVertices">
+                    <h3>Detials of the Graph</h3>
+                    <label for="numOfVertices">No. of Vertices</label>
+                    <input type="number" id="numOfVertices" placeholder="1-10" min="1" max="10"
+                        oninput="validity.valid||(value='');">
+                    <button onclick="setNumberOfVertices()" id="set-vertices">Set</button>
+                </div>
+                <div class="addEdge" id="addEdge" style="display: none;">
+                    <label>Add Edge</label>
+                    <div>
+                        Between
+                        <input type="number" id="edge1" min="1" oninput="validity.valid||(value='');">
+                        and
+                        <input type="number" id="edge2" min="1" oninput="validity.valid||(value='');">
+                        <button onclick="addEdgeToGraph()">add</button>
+                    </div>
+                </div>
+                <div id="checkIfBipartite" style="display: none;">
+                    <button onclick="checkBipartiteGraph()">Check if the graph can be Bipartite</button>
+                    <p id="isBipartiteGraphOrNot" style="display: none;"></p>
+                </div>
+            </div>
+            <div>
+                <h3>Graph</h3>
+                <p id="graph-p">the graph formed will be displayed here!</p>
+                <div class="graph-container" id="graph-container">
+                    <!-- SVG for edges -->
+                    <svg id="svg"></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script src="index.js"></script>
+
+</html>
