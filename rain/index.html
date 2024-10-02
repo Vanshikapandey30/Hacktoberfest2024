@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url("https://images.pexels.com/photos/8645132/pexels-photo-8645132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .rain {
+        width: 100vw;
+        height: 100vh;
+        background-image: url("../../images/rain.png");
+        animation: raining 0.4s linear infinite;
+      }
+
+      @keyframes raining {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 10% 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rain"></div>
+  </body>
+</html>
