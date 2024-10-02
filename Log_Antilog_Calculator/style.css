@@ -1,0 +1,148 @@
+/* Styling the main layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading style */
+h1 {
+    margin-bottom: 20px;
+    color: #4A90E2;
+    font-size: 28px;
+}
+
+/* Input section styling */
+.input-section label {
+    font-size: 16px;
+    color: #333;
+}
+
+.input-section input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.input-section input:focus {
+    border-color: #4A90E2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+}
+
+/* Button styling */
+.button-section button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-section button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Result section styling */
+.result-section {
+    margin-top: 30px;
+}
+
+.result-section p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4A90E2;
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+#log-result {
+    color: #FF6347; /* Tomato color for log result */
+}
+
+#antilog-result {
+    color: #4682B4; /* SteelBlue color for antilog result */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Existing styles... */
+
+/* Bounce animation for result */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Apply bounce animation to result */
+.result-section p.bounce {
+    animation: bounce 0.8s ease-in-out;
+}
+
+/* Existing result-section animation */
+.result-section p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4A90E2;
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+/* Log result color */
+#log-result {
+    color: #FF6347; /* Tomato color for log result */
+}
+
+/* Antilog result color */
+#antilog-result {
+    color: #4682B4; /* SteelBlue color for antilog result */
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log and Antilog Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Log & Antilog Calculator</h1>
+        <div class="input-section">
+            <label for="number">Enter Number:</label>
+            <input type="number" id="number" placeholder="Enter a number">
+
+            <label for="base">Enter Base (Optional, default is 10):</label>
+            <input type="number" id="base" placeholder="Enter base (e.g., 2 or 10)">
+        </div>
+
+        <div class="button-section">
+            <button onclick="calculateLog()">Calculate Log</button>
+            <button onclick="calculateAntilog()">Calculate Antilog</button>
+        </div>
+
+        <div class="result-section">
+            <p id="log-result">Log Result: </p>
+            <p id="antilog-result">Antilog Result: </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
