@@ -3,6 +3,7 @@ let noOfVertices = 0;
 let color = [];
 let isBipartiteGraph = true;
 const vertices = [];
+let first_cycle = [];
 
 function printGraph() {
     console.log("printing graph");
@@ -63,34 +64,50 @@ function DFS_ColorGraph(v) {
     for (let u = 0; u < adj[v].length; u++) {
         if (color[adj[v][u]] == 0) {
             color[adj[v][u]] = 3 - color[v];
+            setColor(adj[v][u], 3 - color[v]);
             DFS_ColorGraph(adj[v][u]);
         }
         if (color[adj[v][u]] == color[v]) {
             isBipartiteGraph = false;
+            first_cycle.push(adj[v][u]);
+            first_cycle.push(v);
             return false;
         }
     }
 }
 
 function checkBipartiteGraph() {
+    isBipartiteGraph = true;
     let isBipartiteGraphOrNot = document.getElementById("isBipartiteGraphOrNot");
     for (let i = 0; i < noOfVertices; i++) {
         if (color[i] == 0 && isBipartiteGraph == true) {
             color[i] = (i > 0) ? 3 - color[i - 1] : 1;
+            setColor(i, color[i]);
             DFS_ColorGraph(i);
         }
     }
 
+    const conclusion = document.getElementById("conclusion");
+
     if (isBipartiteGraph == false) {
         console.log("the given graph is not a bipartite graph");
-        isBipartiteGraphOrNot.innerHTML = 'The given graph is not a bipartite graph';
-        return true;
+        isBipartiteGraphOrNot.innerHTML = 'The given graph is not a bipartite graph!!!';
+        isBipartiteGraphOrNot.style.color = "red";
+        createRedEdge(first_cycle[0] + 1, first_cycle[1] + 1);
+        conclusion.innerHTML = `The <span id="RED">RED</span> edge between <span id="number">${first_cycle[0] + 1}</span> and <span id="number">${first_cycle[1] + 1}</span> denotes one of those edges which makes an <span id="bold">ODD</span> lenth cycle in the <span id="bold">GRAPH</span>, because of which this graph cannot be a <span id="bold">BIPARTITE</span>`;
+
+    }
+    else {
+        console.log("the given graph is a bipartite graph");
+        isBipartiteGraphOrNot.innerHTML = 'The given graph is a bipartite graph';
+        isBipartiteGraphOrNot.style.color = "greenyellow";
+        conclusion.innerHTML = 'All the vertices can be divided into two sets, set1 with <span id=color1>COLOR1</span> and set1 with <span id=color2>COLOR2</span>'
     }
 
-    console.log("the given graph is a bipartite graph");
-    isBipartiteGraphOrNot.innerHTML = 'The given graph is a bipartite graph';
+    conclusion.style.display = 'block';
+    isBipartiteGraphOrNot.style.fontSize = "2rem";
     isBipartiteGraphOrNot.style.display = "block";
-    return true;
+    return "done";
 }
 
 function setNumberOfVertices() {
@@ -98,11 +115,9 @@ function setNumberOfVertices() {
     let edge1 = document.getElementById("edge1");
     let edge2 = document.getElementById("edge2");
     document.getElementById("addEdge").style.display = (numOfVertices > 1) ? "block" : "none";
-    document.getElementById("checkIfBipartite").style.display = "none";
+    document.getElementById("checkIfBipartite").style.display = (numOfVertices != '' && numOfVertices >= 1) ? "block" : "none";
     document.getElementById("isBipartiteGraphOrNot").style.display = "none";
-    document.getElementById("checkIfBipartite").style.display = "block";
     document.getElementById("set-vertices").innerHTML = 'Reset';
-    document.getElementById("graph-p").innerHTML = '';
     let graphContainer = document.getElementById('graph-container')
     configureNoOfVertices(numOfVertices);
     edge1.setAttribute('max', numOfVertices);
@@ -112,7 +127,16 @@ function setNumberOfVertices() {
     edge1.setAttribute("placeholder", `1-${numOfVertices}`);
     edge2.setAttribute("placeholder", `1-${numOfVertices}`);
     graphContainer.innerHTML = '<svg id="svg"></svg>';
-    createGraph(numOfVertices);
+
+    if ((numOfVertices != '' && numOfVertices >= 1)) {
+        createGraph(numOfVertices);
+        document.getElementById("graph-p").innerHTML = '';
+    }
+
+    first_cycle = [];
+    document.getElementById("isBipartiteGraphOrNot").innerHTML = '';
+    document.getElementById("conclusion").innerHTML = '';
+    resetColor();
 }
 
 let setNumberOfVerticesInput = document.getElementById("numOfVertices");
@@ -129,10 +153,16 @@ setNumberOfVerticesInput.addEventListener("keypress", function (event) {
 function addEdgeToGraph() {
     let edge1 = document.getElementById("edge1").value;
     let edge2 = document.getElementById("edge2").value;
-    if (edge1 == edge2)
+    if (edge1 == edge2) {
         alert("edge to itself is not allowed");
+        return "done";
+    }
     setColorDefault();
     createEdge(edge1, edge2);
+    first_cycle = [];
+    document.getElementById("isBipartiteGraphOrNot").innerHTML = '';
+    document.getElementById("conclusion").innerHTML = '';
+    resetColor();
     console.log(addEdge(edge1, edge2));
 }
 
@@ -155,6 +185,26 @@ function createEdge(vertex1Name, vertex2Name) {
     svg.appendChild(edge);
 }
 
+function createRedEdge(vertex1Name, vertex2Name) {
+    const svg = document.getElementById('svg');
+    const vertex1 = vertices.find(v => v.name == vertex1Name);
+    const vertex2 = vertices.find(v => v.name == vertex2Name);
+
+    if (!vertex1 || !vertex2) {
+        console.error("One or both vertices not found");
+        return;
+    }
+
+    // Create the edge (line)
+    const edge = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    edge.setAttribute("x1", vertex1.x);
+    edge.setAttribute("y1", vertex1.y);
+    edge.setAttribute("x2", vertex2.x);
+    edge.setAttribute("y2", vertex2.y);
+    edge.style.stroke = "red";
+    svg.appendChild(edge);
+}
+
 function createGraph(numVertices) {
     const container = document.getElementById('graph-container');
     // const numVertices = 10;
@@ -168,6 +218,7 @@ function createGraph(numVertices) {
         // Create vertex element
         const vertex = document.createElement('div');
         vertex.classList.add('vertex');
+        vertex.id = `${i + 1}`;
         const vertexName = `${i + 1}`;
         vertex.textContent = vertexName;
 
@@ -185,5 +236,19 @@ function createGraph(numVertices) {
 
         // Add the vertex to the container
         container.appendChild(vertex);
+    }
+}
+
+
+function setColor(vertex, color) {
+    if (color == 1)
+        document.getElementById(vertex + 1).style.backgroundColor = "#A4193D";
+    else
+        document.getElementById(vertex + 1).style.backgroundColor = "#FFDFB9";
+}
+
+function resetColor() {
+    for (let i = 0; i < noOfVertices; i++) {
+        document.getElementById(i + 1).style.backgroundColor = "white"
     }
 }

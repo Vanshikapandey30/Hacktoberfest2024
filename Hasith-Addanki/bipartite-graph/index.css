@@ -1,0 +1,151 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.graph-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: center;
+}
+
+.graph-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 50px auto;
+    text-align: center;
+    left: 1.25rem;
+    /* align-items: center; */
+}
+
+.vertex {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: black;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Behind the vertices */
+}
+
+line {
+    stroke: white;
+    stroke-width: 2;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h1,
+h3 {
+    color: rgb(234, 96, 96);
+}
+
+h2 {
+    color: rgb(98, 142, 238);
+}
+
+#desc {
+    padding: auto;
+}
+
+.numberOfVertices {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: auto;
+}
+
+.numberOfVertices input,
+.numberOfVertices button {
+    width: 5rem;
+    margin: auto;
+    text-align: center;
+}
+
+#addEdge,
+.numberOfVertices {
+    width: 90%;
+}
+
+#addEdge label {
+    padding: 2rem;
+    margin: 2rem;
+}
+
+#addEdge div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#addEdge div input,
+#addEdge div button {
+    width: 5rem;
+    margin: auto;
+    text-align: center;
+}
+
+button {
+    background-color: rgba(128, 128, 128, 0.372);
+    color: white;
+    font-weight: 600;
+}
+
+#color1 {
+    color: #A4193D;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#color2 {
+    color: #FFDFB9;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#RED {
+    color: red;
+    font-weight: 900;
+}
+
+#bold,
+#number {
+    font-weight: 900;
+}
+
+#number {
+    color: #e82e2e;
+}
+
+#bold {
+    color: #e82e2e;
+}
+
+a {
+    color: rgb(9, 139, 194);
+    text-decoration-line: none;
+}
+
+footer {
+    padding-top: 4rem;
+    text-align: center;
+}
