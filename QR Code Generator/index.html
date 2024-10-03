@@ -12,29 +12,38 @@
         <h1>QR Generator</h1>
         <input type="text" id="text" placeholder="Enter URL or text">
         <button onclick="generateQR()">Generate QR</button>
+        <button onclick="clearQR()">Clear QR</button>
         <div id="qrcode" class="hidden"></div>
         <button onclick="downloadQR()" id="downloadBtn" class="hidden">Download QR</button>
+        <div id="errorMsg" class="error hidden">Please enter valid text or URL!</div>
     </div>
 
     <script>
         let qr;
         function generateQR() {
-            const text = document.getElementById("text").value;
-            if (text) {
-                const qrContainer = document.getElementById("qrcode");
-                qrContainer.innerHTML = ''; // Clear previous QR code
-                qrContainer.classList.remove('hidden');
-                qrContainer.classList.add('fade-in');
-                
-                qr = new QRCode(qrContainer, {
-                    text: text,
-                    width: 200,
-                    height: 200
-                });
-                
-                document.getElementById("downloadBtn").classList.remove('hidden');
-                document.getElementById("downloadBtn").classList.add('fade-in');
+            const text = document.getElementById("text").value.trim();
+            const errorMsg = document.getElementById("errorMsg");
+
+            if (!text) {
+                errorMsg.classList.remove('hidden');
+                return;
             }
+            
+            errorMsg.classList.add('hidden');
+            const qrContainer = document.getElementById("qrcode");
+            qrContainer.innerHTML = ''; // Clear previous QR code
+            qrContainer.classList.remove('hidden');
+            qrContainer.classList.add('fade-in');
+
+            // Generate QR code
+            qr = new QRCode(qrContainer, {
+                text: encodeURIComponent(text),
+                width: 200,
+                height: 200
+            });
+
+            document.getElementById("downloadBtn").classList.remove('hidden');
+            document.getElementById("downloadBtn").classList.add('fade-in');
         }
 
         function downloadQR() {
@@ -44,6 +53,13 @@
             link.download = 'qrcode.png';
             link.href = image;
             link.click();
+        }
+
+        function clearQR() {
+            document.getElementById("qrcode").classList.add('hidden');
+            document.getElementById("downloadBtn").classList.add('hidden');
+            document.getElementById("text").value = '';
+            document.getElementById("errorMsg").classList.add('hidden');
         }
     </script>
 </body>
