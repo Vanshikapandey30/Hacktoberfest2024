@@ -10,6 +10,7 @@ body {
     background-color: #f0f4f8;
     color: #333;
 }
+
 .container {
     background-color: #ffffff;
     padding: 40px;
@@ -19,6 +20,7 @@ body {
     max-width: 400px;
     width: 100%;
 }
+
 h1 {
     margin-top: 0;
     font-weight: 600;
@@ -26,6 +28,7 @@ h1 {
     margin-bottom: 30px;
     color: #2c3e50;
 }
+
 input {
     width: 100%;
     padding: 15px;
@@ -37,15 +40,20 @@ input {
     font-size: 1em;
     transition: all 0.3s ease;
     box-sizing: border-box;
+    line-height: 1.5;
 }
+
 input::placeholder {
     color: #999;
 }
+
 input:focus {
     outline: none;
     border-color: #3498db;
     box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 button {
     background: #3498db;
     color: white;
@@ -58,29 +66,57 @@ button {
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px 0 rgba(52, 152, 219, 0.4);
+    line-height: 1.5;
 }
+
 button:hover {
     background: #2980b9;
     transform: translateY(-3px);
     box-shadow: 0 6px 20px 0 rgba(52, 152, 219, 0.6);
+    transition: transform 0.2s ease, background 0.3s ease;
 }
+
 #qrcode {
-    margin: 20px 0px;
+    margin: 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 #qrcode img {
     max-width: 100%;
     height: auto;
+    border-radius: 10px; /* Optional: Adds a softer look */
 }
+
 .hidden {
     display: none !important;
 }
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
 .fade-in {
     animation: fadeIn 0.5s ease-in;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    input, button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    .container {
+        padding: 30px;
+    }
 }
