@@ -1,45 +1,48 @@
 // 17. Letter Combinations of a Phone Number
+
 #include <iostream>
 #include <vector>
+#include <string>
 #include <unordered_map>
 using namespace std;
-vector<string> res;
-void solve(int idx,string &digit,string &temp,unordered_map<char,string> &mp){
 
-  if(idx==digit.size()){
-    res.push_back(temp);
-    return;
-  }
-  if(digit.empty()){
-    return;
-  }
-  char ch = digit[idx];
-  string st = mp[ch];
-  for(int i = 0;i<st.length();i++){
-    temp.push_back(st[i]);
-    solve(idx+1,digit,temp,mp);
-    temp.pop_back();
-  }
+vector<string> letterCombinations(const string &digits) {
+    if (digits.empty()) return {}; 
+
+    unordered_map<char, string> mp = {
+        {'2', "abc"}, {'3', "def"}, {'4', "ghi"}, {'5', "jkl"},
+        {'6', "mno"}, {'7', "pqrs"}, {'8', "tuv"}, {'9', "wxyz"}
+    };
+
+    vector<string> res = {""}; 
+    for (char digit : digits) {
+        if (mp.find(digit) == mp.end()) continue; 
+
+        const string &letters = mp[digit]; 
+        vector<string> temp;
+        
+       
+        for (const string &comb : res) {
+            for (char letter : letters) {
+                temp.push_back(comb + letter);
+            }
+        }
+        res.swap(temp); 
+    }
+
+    return res;
 }
-int main()
-{
-  string digit;
-  cout << "Enter Digit : ";
-  cin >> digit;
-  res.clear();
-  unordered_map<char, string> mp;
-  mp['2'] = "abc";
-  mp['3'] = "def";
-  mp['4'] = "ghi";
-  mp['5'] = "jkl";
-  mp['6'] = "mno";
-  mp['7'] = "pqrs";
-  mp['8'] = "tuv";
-  mp['9'] = "wxyz";
-  string temp = "";
-  solve(0,digit,temp,mp);
-  for(auto ele:res){
-    cout<<ele<<" ";
-  }
-  return 0;
+
+int main() {
+    string digits;
+    cout << "Enter Digit: ";
+    cin >> digits;
+
+    vector<string> combinations = letterCombinations(digits);
+    for (const string &comb : combinations) {
+        cout << comb << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
