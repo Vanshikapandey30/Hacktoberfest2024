@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive LCM and HCF Calculator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <h1> LCM & HCF Calculator</h1>
+    <div class="calculator">
+      <div id="input-container">
+        <div class="input-group">
+          <input type="number" class="num" placeholder="Enter a number" required>
+          <button class="remove-number" disabled><i class="fas fa-times"></i></button>
+        </div>
+        <div class="input-group">
+          <input type="number" class="num" placeholder="Enter a number" required>
+          <button class="remove-number" disabled><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+
+      <button id="add-number" class="action-button">
+        <i class="fas fa-plus"></i> Add Number
+      </button>
+      <button id="calculate-btn" class="action-button calculate-button">
+        <i class="fas fa-calculator"></i> Calculate
+      </button>
+
+      <div class="result">
+        <div class="result-item">
+          <h2>LCM</h2>
+          <span id="lcmResult">-</span>
+        </div>
+        <div class="result-item">
+          <h2>HCF</h2>
+          <span id="hcfResult">-</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
