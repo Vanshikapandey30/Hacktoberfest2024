@@ -17,11 +17,11 @@ function App() {
     const res = await axios.post(`${HOST}/api/generate-image`, { prompt });
     if (res.status === 200) {
      
-      setTimeout(() => {
+      
         setLoading(false); 
         setimagePath(res.data); 
         settoggleSearch(true);
-      }, 4000);
+      
     }
 
   }
@@ -46,7 +46,7 @@ function App() {
   return (
     <>
       <div className="flex justify-center items-center h-[100vh] w-full">
-        <WavyBackground className="flex flex-col justify-center items-center w-full max-w-4xl mx-auto h-full p-10 gap-6">
+        <WavyBackground className="flex flex-col justify-center items-center w-full max-w-4xl mx-auto h-[calc(100vh-<footer-height>)] p-10 gap-6">
           <h3 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold inter-var text-center mb-4">
             Welcome to AI Image Generator
           </h3>
@@ -76,15 +76,24 @@ function App() {
     <div className="flex flex-col items-center justify-center w-full">
             <div className="w-[80vw] md:w-[50vw]">
               <PlaceholdersAndVanishInput
-                placeholders={["Enter your prompt"]}
+                placeholders={["beautifull sunset","beach","waterfalls"]}
                 onChange={handleChange}
                 onSubmit={onSubmit}
               />
             </div>
           </div>
   )}
+
+
+
+
+<footer className=" fixed text-white bottom-0">
+  Made with ❤️ by  <a href="https://github.com/damarudhvarma">Damarudh Varma</a>
+</footer>
           
         </WavyBackground>
+        
+
       </div>
     </>
   );
