@@ -2,54 +2,88 @@ import { PlaceholdersAndVanishInput } from "./components/ui/placeholders-and-van
 import { WavyBackground } from "./components/ui/wavy-background";
 import { CardBody, CardContainer, CardItem } from "./components/ui/3d-card";
 import { useState } from "react";
+import {  HOST } from "./utils/constants";
+import axios from 'axios';
+ import "./index.css";
+
 function App() {
-   const [prompt, setprompt] = useState("");
+  const [prompt, setprompt] = useState("");
+  const [imagePath, setimagePath] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [toggleSearch, settoggleSearch] = useState(true);
 
-  const handleChange = (e) => {
-    setprompt(e.target.value);
-    
-  };
-
-  const onSubmit = (e) => {
+  const generateImage = async (prompt) => {
+   
+    const res = await axios.post(`${HOST}/api/generate-image`, { prompt });
+    if (res.status === 200) {
      
-    e.preventDefault();
-    console.log("Submitted", prompt);
+      setTimeout(() => {
+        setLoading(false); 
+        setimagePath(res.data); 
+        settoggleSearch(true);
+      }, 4000);
+    }
 
-
+  }
+  const handleChange = (e) => {
+  
+    setimagePath("");
+    setprompt(e.target.value);
+ 
   };
 
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    settoggleSearch(false);
+    await generateImage(prompt);
+    console.log("Submitted", prompt);
+  };
 
+ 
+  
 
   return (
     <>
       <div className="flex justify-center items-center h-[100vh] w-full">
-        <WavyBackground className="flex flex-col justify-center items-center w-full max-w-4xl mx-auto h-full p-10  gap-6">
+        <WavyBackground className="flex flex-col justify-center items-center w-full max-w-4xl mx-auto h-full p-10 gap-6">
           <h3 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold inter-var text-center mb-4">
             Welcome to AI Image Generator
           </h3>
+          {loading && <div class="spinner">
+    <div class="spinner1"></div>
+</div>} 
+          {imagePath && (
           <div>
             <CardContainer className="inter-var">
-              <CardBody className="bg-gray-800 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-8 border  ">
-                <CardItem translateZ="100" className="w-full   mt-2">
-                  <img
-                    src=""
-                    className="h-64 w-full object-cover rounded-xl group-hover:shadow-xl"
-                  />
-                </CardItem>
+              <CardBody className="bg-gray-800 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-8 border">
+              <CardItem translateZ="100" className="w-full mt-2">
+  
+    <img
+      src={imagePath}
+      alt="Generated"
+      className="h-64 w-full object-cover rounded-xl group-hover:shadow-xl"
+    />
+
+</CardItem>
+
                 <div className="flex justify-between items-center "></div>
               </CardBody>
             </CardContainer>
           </div>
-
-          <div className="flex flex-col items-center justify-center   w-full">
+  ) }  
+  {toggleSearch && (
+    <div className="flex flex-col items-center justify-center w-full">
             <div className="w-[80vw] md:w-[50vw]">
               <PlaceholdersAndVanishInput
-                placeholders={["Enter the your prompt"]}
+                placeholders={["Enter your prompt"]}
                 onChange={handleChange}
                 onSubmit={onSubmit}
               />
             </div>
           </div>
+  )}
+          
         </WavyBackground>
       </div>
     </>
