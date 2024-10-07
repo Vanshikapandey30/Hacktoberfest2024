@@ -1,0 +1,72 @@
+from turtle import *
+from random import choice
+from freegames import line
+
+turns = {'blue': 'green', 'green': 'blue'}
+state = {'player': 'green', 'rows': [0] * 8}
+
+def grid():
+    """Draw Color Connect Clash grid."""
+    bgcolor('light blue')
+    for x in range(-150, 200, 50):
+        line(x, -200, x, 200)
+    for x in range(-175, 200, 50):
+        for y in range(-175, 200, 50):
+            up()
+            goto(x, y)
+            begin_fill()
+            color('white')
+            for _ in range(4):  # Draw squares
+                forward(50)
+                left(90)
+            end_fill()
+    update()
+
+def check_full_row(rows):
+    """Check if all rows are full."""
+    return all(count >= 8 for count in rows)
+
+def random_computer_move():
+    """Make a random move for the computer."""
+    rows = state['rows']
+    available_columns = [i for i, count in enumerate(rows) if count < 8]
+    return choice(available_columns)
+
+def tap(x, y):
+    """Draw blue or green square in tapped row or random computer move."""
+    player = state['player']
+    rows = state['rows']
+    
+    if player == 'green':
+        row = int((x + 200) // 50)
+    else:
+        row = random_computer_move()
+    
+    count = rows[row]
+
+    if count < 8:  # Prevent overflow in columns
+        x = row * 50 - 200 + 25
+        y = count * 50 - 200 + 25
+        up()
+        goto(x, y)
+        begin_fill()
+        color(player)
+        for _ in range(4):  # Draw square
+            forward(50)
+            left(90)
+        end_fill()
+        update()
+
+        rows[row] = count + 1
+        if check_full_row(rows):
+            print("Game over: All rows full!")
+            return
+        
+        state['player'] = turns[player]
+
+setup(420, 420, 370, 0)
+hideturtle()
+tracer(False)
+grid()
+onscreenclick(tap)
+done()
