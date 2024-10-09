@@ -1,7 +1,7 @@
 # React Weather App🌥️
 
-This is a functional weather app made using react and vite. I have used the OpenWeatherMap API to get the weather data.
-preview - [WeatherApp](https://dpweatherappreact.netlify.app/)
+This is a functional weather app made using react and vite. I have used the OpenWeatherMap API to get the weather data.<br>
+Preview - [WeatherApp](https://dpweatherappreact.netlify.app/)
 ## Screenshots
 
 ![App Screenshot](./gitImages/1.png)  
