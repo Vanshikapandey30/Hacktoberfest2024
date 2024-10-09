@@ -6,7 +6,7 @@ Preview - [WeatherApp](https://dpweatherappreact.netlify.app/)
 
 ![App Screenshot](./gitImages/1.png)  
 ![App Screenshot](./gitImages/2.png)
-````
+
 ## Features
 
 <ul>
