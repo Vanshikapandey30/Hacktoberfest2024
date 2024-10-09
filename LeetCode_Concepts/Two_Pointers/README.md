@@ -29,7 +29,7 @@ The solution for the "Trapping Rain Water" problem employs the **two-pointer tec
 
 4. **Result**: The total trapped water is returned at the end of the loop, yielding an efficient O(n) time complexity while maintaining O(1) space complexity.
 
-This method is both intuitive and efficient, making it a popular solution for such problems.
+This method is both intuitive and efficient, making it a popular solution for such problem.
 
 ### Time Complexity
 - O(n), where n is the number of elements in the height array.
