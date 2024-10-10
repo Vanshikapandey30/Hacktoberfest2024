@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+
 void solve(int i, int j, vector<vector<int>> &a, int n, vector<string> &ans, string move, vector<vector<int>> &vis)
 {
   if (i == n - 1 and j == n - 1)
