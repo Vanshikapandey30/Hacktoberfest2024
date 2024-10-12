@@ -1,0 +1,33 @@
+.calculator {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+button {
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+body {
+  background-color: black;
+  color: white; /* Optionally, set text color to white for better visibility */
+}
