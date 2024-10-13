@@ -1,0 +1,69 @@
+public class ConditionalStatements {
+
+    public static void main(String[] args) {
+        int number = 10;
+
+        // 1. if statement
+        if (number > 0) {
+            System.out.println("The number is positive.");
+        }
+
+        // 2. if-else statement
+        if (number < 0) {
+            System.out.println("The number is negative.");
+        } else {
+            System.out.println("The number is non-negative.");
+        }
+
+        // 3. if-else-if ladder
+        if (number < 0) {
+            System.out.println("The number is negative.");
+        } else if (number == 0) {
+            System.out.println("The number is zero.");
+        } else {
+            System.out.println("The number is positive.");
+        }
+
+        // 4. Nested if statements
+        if (number > 0) {
+            if (number % 2 == 0) {
+                System.out.println("The number is positive and even.");
+            } else {
+                System.out.println("The number is positive and odd.");
+            }
+        }
+
+        // 5. switch statement
+        int day = 2; // 1 = Monday, 2 = Tuesday, ...
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Invalid day number!");
+                break;
+        }
+
+        // 6. Ternary operator (short form of if-else)
+        String result = (number % 2 == 0) ? "Even" : "Odd";
+        System.out.println("The number is: " + result);
+    }
+}
