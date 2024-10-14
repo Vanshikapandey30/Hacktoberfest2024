@@ -1,0 +1,83 @@
+// Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+// If target is not found in the array, return [-1, -1].
+
+// Input: nums = [5,7,7,8,8,10], target = 7
+// Output: [1,2]
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+
+    // Method to find the first and last position of a target in a sorted array
+    public static int[] findFirstandLast(int[] nums, int target) {
+        // Initialize the result array to store the first and last positions
+        int[] arr = new int[2];
+        arr[0] = -1; // (default -1 if not found)
+        arr[1] = -1; // (default -1 if not found)
+
+        // If the input array is empty, return the default array
+        if (nums.length == 0) {
+            return arr;
+        }
+
+        // Initialize pointers for binary search
+        int i = 0; // Start 
+        int j = nums.length - 1; // End 
+
+        // First pass: find the last occurrence of the target
+        while (i <= j) {
+            int mid = (i + j) / 2; // midpoint
+
+            if (nums[mid] == target) {
+                arr[1] = mid; // Update last position
+                i = mid + 1; // Move to the right to find later occurrences
+            } else if (nums[mid] < target) {
+                i = mid + 1; // Move right
+            } else {
+                j = mid - 1; // Move left
+            }
+        }
+
+        // Reset pointers for the second pass
+        i = 0; 
+        j = nums.length - 1;
+
+        // Second pass: find the first occurrence of the target
+        while (i <= j) {
+            int mid = (i + j) / 2; //midpoint
+
+            if (nums[mid] == target) {
+                arr[0] = mid; // Update first position
+                j = mid - 1; // Move to the left to find earlier occurrences
+            } else if (nums[mid] < target) {
+                i = mid + 1; // Move right
+            } else {
+                j = mid - 1; // Move left
+            }
+        }
+
+        // Return the array containing the first and last positions
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int target = sc.nextInt();
+
+        // Call the method to find first and last positions
+        int[] answer = findFirstandLast(arr, target);
+        
+        for (int i : answer) {
+            System.out.print(i + " ");
+        }
+    }
+}
