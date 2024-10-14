@@ -1,5 +1,5 @@
 // Java program for Merge Sort
-public class Merge_Sort {
+public class MergeSort {
 
     // Merges two subarrays of arr[].
     // First subarray is arr[l..m]
@@ -82,7 +82,7 @@ public class Merge_Sort {
         System.out.println("Given Array");
         printArray(arr);
 
-        Merge_Sort ob = new Merge_Sort();
+        MergeSort ob = new MergeSort();
         ob.sort(arr, 0, arr.length - 1);
 
         System.out.println("\nSorted array");
