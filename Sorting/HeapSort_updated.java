@@ -2,18 +2,18 @@ import java.util.Scanner;
 
 public class HeapSort_updated {
 
-    // Function to heapify a subtree rooted with node i, n is the size of heap
+    // This is a function to heapify a subtree rooted with node i, n is the size of heap
     public void heapify(long arr[], int n, int i) {
         int largest = i; // Initialize largest as root
         int left = 2 * i + 1; // Left child
         int right = 2 * i + 2; // Right child
 
-        // If left child is larger than root
+        // Incase left child is larger than root 
         if (left < n && arr[left] > arr[largest]) {
             largest = left;
         }
 
-        // If right child is larger than the largest so far
+        // Incase right child is larger than the largest so far
         if (right < n && arr[right] > arr[largest]) {
             largest = right;
         }
@@ -33,24 +33,24 @@ public class HeapSort_updated {
     public void sort(long arr[]) {
         int n = arr.length;
 
-        // Build a maxheap (rearrange array)
+     
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i);
         }
 
-        // Extract elements one by one from the heap
+       
         for (int i = n - 1; i > 0; i--) {
-            // Move current root to end
+          
             long temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
 
-            // Call max heapify on the reduced heap
+      
             heapify(arr, i, 0);
         }
     }
 
-    // Utility function to print the array
+
     public void printArray(long arr[]) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
@@ -59,7 +59,7 @@ public class HeapSort_updated {
         System.out.println();
     }
 
-    // Main method to take input and execute heap sort
+
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
 
@@ -73,7 +73,7 @@ public class HeapSort_updated {
             arr[i] = scanner.nextLong();
         }
 
-        // Create a HeapSort_updated object and sort the array
+   
         HeapSort_updated heapSort = new HeapSort_updated();
         heapSort.sort(arr);
 
