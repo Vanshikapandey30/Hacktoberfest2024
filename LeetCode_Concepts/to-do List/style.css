@@ -1,0 +1,92 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Set to light gray */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+div {
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+label {
+    font-size: 1.2rem;
+    color: #333333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 5px 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #00aaff;
+    outline: none;
+}
+
+#add-task-btn {
+    background-color: #00aaff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#add-task-btn:hover {
+    background-color: #007acc;
+    transform: translateY(-2px);
+}
+
+ul#todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+ul#todo-list li {
+    background-color: red;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 8px 0;
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+ul#todo-list li:hover {
+    transform: translateY(-2px);
+}
+
+.done {
+    text-decoration: line-through;
+    background: green;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@media (max-width: 550px) {
+    body {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    input[type="text"] {
+        padding: 7px;
+    }
+}
