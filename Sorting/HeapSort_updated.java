@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HeapSort {
+public class HeapSort_updated {
 
     // Function to heapify a subtree rooted with node i, n is the size of heap
     public void heapify(long arr[], int n, int i) {
@@ -20,12 +20,11 @@ public class HeapSort {
 
         // If largest is not root
         if (largest != i) {
-           
             long swap = arr[i];
             arr[i] = arr[largest];
             arr[largest] = swap;
 
-            
+            // Recursively heapify the affected subtree
             heapify(arr, n, largest);
         }
     }
@@ -34,24 +33,24 @@ public class HeapSort {
     public void sort(long arr[]) {
         int n = arr.length;
 
-       
+        // Build a maxheap (rearrange array)
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i);
         }
 
-        
+        // Extract elements one by one from the heap
         for (int i = n - 1; i > 0; i--) {
-          
+            // Move current root to end
             long temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
 
-           
+            // Call max heapify on the reduced heap
             heapify(arr, i, 0);
         }
     }
 
-   
+    // Utility function to print the array
     public void printArray(long arr[]) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
@@ -60,7 +59,7 @@ public class HeapSort {
         System.out.println();
     }
 
-    
+    // Main method to take input and execute heap sort
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
 
@@ -74,8 +73,8 @@ public class HeapSort {
             arr[i] = scanner.nextLong();
         }
 
-      
-        HeapSort heapSort = new HeapSort();
+        // Create a HeapSort_updated object and sort the array
+        HeapSort_updated heapSort = new HeapSort_updated();
         heapSort.sort(arr);
 
         System.out.println("Sorted array is:");
