@@ -1,5 +1,6 @@
 import Search from "../components/Search";
 import Logo from "../components/Logo";
+import KonamiCode from "./Konami_code";
 import Info1 from "./Info1";
 import Info2 from "./Info2";
 import Info3 from "./Info3";
@@ -30,11 +31,13 @@ function WeatherApp() {
           <Logo />
           <Search updateWeatherInfo={updateWeatherInfo} />
         </div>
+      <KonamiCode />
         <div className="bodyCont">
           <Info1 info={weatherInfo} />
           <Info2 info={weatherInfo} />
           <Info3 info={weatherInfo} />
         </div>
+        
       </div>
     </>
   );
