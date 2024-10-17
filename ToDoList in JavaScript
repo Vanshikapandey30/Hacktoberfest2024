@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacktoberfest To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .remove-btn {
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Hacktoberfest To-Do List</h2>
+    <input type="text" id="todoInput" placeholder="Add a new task">
+    <button onclick="addTodo()">Add Task</button>
+
+    <ul id="todoList"></ul>
+</div>
+
+<script>
+    const todoList = document.getElementById('todoList');
+
+    function addTodo() {
+        const todoInput = document.getElementById('todoInput');
+        const task = todoInput.value.trim();
+
+        if (task === '') {
+            alert('Please enter a task');
+            return;
+        }
+
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span>${task}</span>
+            <button class="remove-btn" onclick="removeTask(this)">Remove</button>
+        `;
+        li.addEventListener('click', () => {
+            li.classList.toggle('completed');
+        });
+
+        todoList.appendChild(li);
+        todoInput.value = '';
+    }
+
+    function removeTask(button) {
+        const li = button.parentElement;
+        todoList.removeChild(li);
+    }
+</script>
+
+</body>
+</html>
