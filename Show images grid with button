@@ -1,0 +1,283 @@
+{% comment %}
+   The following code defines a Shopify section named "Image Hover Zoom". 
+   Users can select an image, overlay text, and a product.
+   The section creates an image container with zoom functionality on hover.
+   {% endcomment %}
+
+{% schema %}
+{
+  "name": "Image Hover Zoom",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "alt1",
+      "label": "Image 1 Alt Text",
+      "default": "Image 1 Alt Text"
+    },
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Overlay Text 1",
+      "default": "Overlay Text 1"
+    },
+    {
+      "type": "product",
+      "id": "product1",
+      "label": "Select Product 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "alt2",
+      "label": "Image 2 Alt Text",
+      "default": "Image 2 Alt Text"
+    },
+    {
+      "type": "text",
+      "id": "text2",
+      "label": "Overlay Text 2",
+      "default": "Overlay Text 2"
+    },
+    {
+      "type": "product",
+      "id": "product2",
+      "label": "Select Product 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "alt3",
+      "label": "Image 3 Alt Text",
+      "default": "Image 3 Alt Text"
+    },
+    {
+      "type": "text",
+      "id": "text3",
+      "label": "Overlay Text 3",
+      "default": "Overlay Text 3"
+    },
+    {
+      "type": "product",
+      "id": "product3",
+      "label": "Select Product 3"
+    },
+    {
+  "type": "text",
+  "id": "price_range1",
+  "label": "Price Range for Image 1",
+  "default": "Enter price range"
+},
+    {
+  "type": "text",
+  "id": "price_range2",
+  "label": "Price Range for Image 2",
+  "default": "Enter price range"
+},
+    {
+  "type": "text",
+  "id": "price_range3",
+  "label": "Price Range for Image 3",
+  "default": "Enter price range"
+},
+     {
+      "type": "checkbox",
+      "id": "sale1",
+      "label": "Enable Sale Tag for Image 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "sale2",
+      "label": "Enable Sale Tag for Image 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "sale3",
+      "label": "Enable Sale Tag for Image 1"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Custom",
+      "name": "Image Hover Zoom (Enter a Name)"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="image-row">
+  {% if section.settings.product1 != blank %}
+      <div class="image-container">
+        <div class="image-content">
+          <a href="{{ section.settings.product1.url }}">
+            <div class="image-wrapper">
+                {% if section.settings.sale1 == true %}
+                    <div class="sale-tag">Sale!</div>
+                {% endif %}
+                <img width="500" height="500" src="{{ section.settings.image1 | img_url: 'medium' }}" alt="{{ section.settings.alt1 }}" class="zoom-image">
+            </div>
+            <div class="overlay">
+              <div class="text">{{ section.settings.text1 }}</div>
+              
+            </div>
+          </a>
+        </div>
+           <div class="price-range flex" id="price-range-1"> <span class="priceTag">From Rs.</span>{{ section.settings.price_range1 }} </div>
+      </div>
+  {% endif %}
+  {% if section.settings.product2 != blank %}
+      <div class="image-container">
+        <div class="image-content">
+          <a href="{{ section.settings.product2.url }}">
+            <div class="image-wrapper">
+                {% if section.settings.sale2 == true %}
+                    <div class="sale-tag">Sale!</div>
+                {% endif %}
+                <img width="500" height="500" src="{{ section.settings.image2 | img_url: 'medium' }}" alt="{{ section.settings.alt2 }}" class="zoom-image">
+            </div>
+            <div class="overlay">
+              <div class="text">{{ section.settings.text2 }}</div>
+              
+            </div>
+          </a>
+        </div>
+          <div class="price-range flex" id="price-range-2"> <span class="priceTag">From Rs.</span>{{ section.settings.price_range2 }} </div>
+      </div>
+    {% endif %}
+  {% if section.settings.product3 != blank %}
+     <div class="image-container">
+        <div class="image-content">
+        <a href="{{ section.settings.product3.url }}">
+          <div class="image-wrapper">
+                {% if section.settings.sale3 == true %}
+                    <div class="sale-tag">Sale!</div>
+                {% endif %}
+                <img width="500" height="500" src="{{ section.settings.image3 | img_url: 'medium' }}" alt="{{ section.settings.alt3 }}" class="zoom-image">
+            </div>
+          <div class="overlay">
+            <div class="text">{{ section.settings.text3 }}</div>
+          </div>
+        </a>
+          </div>
+       <div class="price-range flex" id="price-range-3"> <span class="priceTag">From Rs.</span>{{ section.settings.price_range3 }} </div>
+      </div>
+    {% endif %}
+</div>
+
+{% stylesheet %}
+   .sale-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+  .priceTag
+  {
+    
+    margin-right:5px;
+  }
+  .price-range
+  {
+    justify-content:center;
+  }
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom:20px;
+}
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.image-content {
+  position: relative;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.zoom-image {
+  transition: transform 0.5s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ .overlay {
+  position: absolute;
+ 
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content:hover .zoom-image {
+  transform: scale(1.2);
+}
+ 
+{% endstylesheet %}
+
+{% javascript %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var products = [
+      "{{ section.settings.product1.id }}",
+      "{{ section.settings.product2.id }}",
+      "{{ section.settings.product3.id }}"
+    ];
+
+    products.forEach(function(productId, index) {
+      fetch('/products/' + productId + '.json')
+        .then(response => response.json())
+        .then(data => {
+          var priceRange = data.product.variants.reduce((acc, curr) => {
+            acc.push(curr.price);
+            return acc;
+          }, []);
+
+          var minPrice = Math.min(...priceRange);
+          var maxPrice = Math.max(...priceRange);
+          document.getElementById('price-range-' + (index + 1)).innerText = 'Price Range: $' + minPrice + ' - $' + maxPrice;
+
+          // Toggle zoomed class after updating price range
+          var imageContainer = document.querySelectorAll('.image-container')[index];
+          imageContainer.addEventListener('click', function() {
+            this.classList.toggle('zoomed');
+          });
+        })
+        .catch(error => console.error('Error fetching product data:', error));
+    });
+  });
+</script>
+
+{% endjavascript %}
