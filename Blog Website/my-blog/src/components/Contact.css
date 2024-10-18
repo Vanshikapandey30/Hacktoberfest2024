@@ -1,0 +1,158 @@
+/* General Styles */
+.contact-container {
+  padding: 50px;
+  max-width: 700px;
+  margin: 20px auto;
+  background-color: #f9f9f9; /* Light background color for contrast */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for a premium feel */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and text color */
+}
+
+.contact-container h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333; /* Darker color for the heading */
+  text-align: center; /* Center align the heading */
+  font-weight: bold; /* Make the heading bold */
+}
+
+.contact-container p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #555; /* Slightly lighter color for the paragraph */
+  text-align: center; /* Center align the paragraph */
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add gap between form elements */
+}
+
+.contact-container label {
+  font-size: 16px;
+  color: #333; /* Darker color for labels */
+  margin-bottom: 8px;
+  font-weight: 500; /* Slightly bolder for emphasis */
+}
+
+.contact-container input,
+.contact-container textarea {
+  padding: 16px; /* Increased padding for more comfortable input fields */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+  border-color: #007bff; /* Blue border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); /* Subtle shadow on focus */
+}
+
+.contact-container textarea {
+  height: 180px; /* Slightly taller for more writing space */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-container button {
+  padding: 15px 30px; /* Adjusted button size */
+  font-size: 16px;
+  background-color: #007bff; /* Blue background for button */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effect */
+  align-self: center; /* Center the button */
+  margin-top: 20px; /* Add some space above the button */
+}
+
+.contact-container button:hover {
+  background-color: #0056b3; /* Darker blue shade on hover */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.contact-container button:focus {
+  outline: none; /* Remove default outline on focus */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .contact-container {
+  background-color: #333; /* Dark background for contrast */
+  color: #f9f9f9; /* Light text color for visibility */
+}
+
+body.dark-mode .contact-container h1,
+body.dark-mode .contact-container p,
+body.dark-mode .contact-container label {
+  color: #f9f9f9; /* Light text color for headings and labels in dark mode */
+}
+
+body.dark-mode .contact-container input,
+body.dark-mode .contact-container textarea {
+  background-color: #444; /* Darker input fields */
+  border: 1px solid #666; /* Darker border for input fields */
+  color: #f9f9f9; /* Light text color for input fields */
+}
+
+body.dark-mode .contact-container input:focus,
+body.dark-mode .contact-container textarea:focus {
+  border-color: #007bff; /* Keep border color on focus */
+}
+
+body.dark-mode .contact-container button {
+  background-color: #007bff; /* Keep button color */
+}
+
+body.dark-mode .contact-container button:hover {
+  background-color: #0056b3; /* Keep hover color for button */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 30px;
+    box-shadow: none; /* Remove shadow on mobile for a cleaner look */
+  }
+
+  .contact-container h1 {
+    font-size: 28px; /* Reduce heading size for smaller screens */
+  }
+
+  .contact-container p {
+    font-size: 16px; /* Slightly smaller font for the paragraph */
+    margin-bottom: 20px;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    font-size: 14px; /* Reduce input and textarea font size */
+    padding: 12px; /* Adjust padding */
+  }
+
+  .contact-container button {
+    padding: 12px 20px; /* Reduce button size */
+    font-size: 14px; /* Smaller button text */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container h1 {
+    font-size: 24px; /* Further reduce heading size for very small screens */
+  }
+
+  .contact-container p {
+    font-size: 14px; /* Smaller paragraph text */
+  }
+
+  .contact-container button {
+    padding: 10px 15px; /* Further reduce button padding */
+    font-size: 12px; /* Smaller button text */
+  }
+}

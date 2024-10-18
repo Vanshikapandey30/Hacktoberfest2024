@@ -1,0 +1,132 @@
+/* Light Mode (default) */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  background-color: white;
+  color: black;
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Blog List Container */
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the blog posts horizontally */
+}
+
+/* Style for individual blog posts */
+.blog-post {
+  width: 50%; /* Set the width to 50% */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between content and image */
+  align-items: flex-start; /* Align items to the start */
+  margin: 20px 0; /* Space between blog posts */
+  padding: 20px; /* Padding around the post */
+  background-color: rgba(255, 255, 255, 0.9); /* Light Mode: Background color with transparency */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for visibility */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition on hover */
+}
+
+body.dark-mode .blog-post {
+  background-color: rgba(255, 255, 255, 0.1); /* Dark Mode: Background color */
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); /* Light shadow in dark mode */
+}
+
+.blog-post:hover {
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+  background: linear-gradient(to right, rgb(176, 220, 255), rgb(183, 255, 255)); /* Background change on hover */
+}
+
+body.dark-mode .blog-post:hover {
+  background: linear-gradient(to right, #333, #555); /* Darker gradient hover in dark mode */
+}
+
+.blog-content {
+  flex: 1; /* Allow content to take available space */
+  margin-right: 20px; /* Space between content and image */
+}
+
+.blog-content h2 {
+  color: #333; /* Title color */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+body.dark-mode .blog-content h2 {
+  color: #ddd; /* Light title color in dark mode */
+}
+
+.blog-content p {
+  color: #555; /* Paragraph color */
+  margin-bottom: 10px; /* Space below each paragraph */
+  overflow: hidden; /* Hide overflow */
+  display: -webkit-box; /* For two lines */
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical; /* Vertical orientation for the box */
+}
+
+body.dark-mode .blog-content p {
+  color: #bbb; /* Lighter paragraph color in dark mode */
+}
+
+.blog-image {
+  width: 30%; /* Set a fixed width for the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for the image */
+}
+
+/* Style for the Read More button */
+.read-more {
+  padding: 12px 20px; /* Increase padding for a bigger button */
+  background-color: #007bff; /* Button color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  display: inline-block; /* Make it block-level for padding */
+  margin-top: 10px; /* Space above the button */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.read-more:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+body.dark-mode .read-more {
+  background-color: #444; /* Dark mode button color */
+}
+
+body.dark-mode .read-more:hover {
+  background-color: #666; /* Darker button hover in dark mode */
+}
+
+h1 {
+  margin: 20px 20px; /* Margin for the main heading */
+}
+
+/* Remove underlines from all links */
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+}
+
+a:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+body.dark-mode a {
+  color: #bbb; /* Light link color in dark mode */
+}

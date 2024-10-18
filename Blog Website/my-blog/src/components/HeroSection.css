@@ -1,0 +1,49 @@
+/* HeroSection.css */
+.hero-container {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+  }
+  
+  .hero-image {
+    background-image: url('/home/atulrajput/Desktop/New Folder/blog/my-blog/public/images/hero.png'); /* Use absolute path starting with '/' */
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1; /* Ensure the image stays behind the content */
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    z-index: 2; /* Overlay on top of the image */
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 3; /* Text above the overlay */
+  }
+  
+  .hero-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  
+  .hero-text p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
