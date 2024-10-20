@@ -1,0 +1,48 @@
+public class QuickSort {
+
+    // Method to partition the array
+    private static int partition(int[] array, int low, int high) {
+        // Choose the rightmost element as pivot
+        int pivot = array[high];
+        int i = (low - 1); // Index of the smaller element
+
+        for (int j = low; j < high; j++) {
+            // If the current element is smaller than or equal to pivot
+            if (array[j] <= pivot) {
+                i++;
+
+                // Swap array[i] and array[j]
+                int temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+
+        // Swap array[i + 1] with array[high] (pivot)
+        int temp = array[i + 1];
+        array[i + 1] = array[high];
+        array[high] = temp;
+
+        return i + 1; // Return the partitioning index
+    }
+
+    // Method to perform QuickSort
+    private static void quickSort(int[] array, int low, int high) {
+        if (low < high) {
+            // Partition the array and get the partitioning index
+            int partitionIndex = partition(array, low, high);
+
+            // Recursively sort the sub-arrays
+            quickSort(array, low, partitionIndex - 1); // Sort the left sub-array
+            quickSort(array, partitionIndex + 1, high); // Sort the right sub-array
+        }
+    }
+
+    // Method to print the array
+    private static void printArray(int[] array) {
+        for (int i : array) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
