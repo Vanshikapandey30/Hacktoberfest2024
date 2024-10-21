@@ -1,0 +1,50 @@
+/* BlogPost.css */
+
+.blog-post-container {
+  padding: 20px; /* Add padding for spacing */
+  background-color: #f9f9f9; /* Light mode background color for the post */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* Increase the font size for the title and body */
+.blog-post-container h2 {
+  font-size: 2em; /* Increase the title size */
+  color: #333; /* Title color for light mode */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.blog-post-container p {
+  line-height: 2.2rem;
+  font-size: 1.2em; /* Increase paragraph size */
+  color: #555; /* Paragraph color for light mode */
+  margin-bottom: 10px; /* Space below each paragraph */
+}
+
+/* Style for text selection */
+.blog-post-container ::selection {
+  background-color: #fdff8c; /* Background color for selected text */
+  color: rgb(0, 0, 0); /* Text color for selected text */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .blog-post-container {
+  background-color: #1e1e1e; /* Dark mode background color for the post */
+  color: #ffffff; /* Default text color in dark mode */
+}
+
+body.dark-mode .blog-post-container h2 {
+  color: #ffffff; /* Title color for dark mode */
+}
+
+body.dark-mode .blog-post-container p {
+  color: #cccccc; /* Paragraph color for dark mode */
+}
+
+/* Dark mode selection styles */
+body.dark-mode .blog-post-container ::selection {
+  background-color: #fdff8c; /* Keep the selection background the same */
+  color: rgb(0, 0, 0); /* Text color for selected text in dark mode */
+}
