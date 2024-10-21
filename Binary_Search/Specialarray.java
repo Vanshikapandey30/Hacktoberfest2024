@@ -8,7 +8,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class specialArray {
+public class Specialarray {
 
     // Method to determine if the array is special and return the value of x
     public static int specialarray(int[] arr, int n) {

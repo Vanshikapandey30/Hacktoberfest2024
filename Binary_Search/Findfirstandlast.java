@@ -8,7 +8,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class Findfirstandlast {
 
     // Method to find the first and last position of a target in a sorted array
     public static int[] findFirstandLast(int[] nums, int target) {
