@@ -1,4 +1,4 @@
-// Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+// Problem Statement: Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
 // If target is not found in the array, return [-1, -1].
 
 // Input: nums = [5,7,7,8,8,10], target = 7
@@ -10,55 +10,47 @@ import java.util.Scanner;
 
 public class Findfirstandlast {
 
-    // Method to find the first and last position of a target in a sorted array
     public static int[] findFirstandLast(int[] nums, int target) {
-        // Initialize the result array to store the first and last positions
         int[] arr = new int[2];
-        arr[0] = -1; // (default -1 if not found)
-        arr[1] = -1; // (default -1 if not found)
+        arr[0] = -1; 
+        arr[1] = -1; 
 
-        // If the input array is empty, return the default array
         if (nums.length == 0) {
             return arr;
         }
 
-        // Initialize pointers for binary search
-        int i = 0; // Start 
-        int j = nums.length - 1; // End 
+        int i = 0;
+        int j = nums.length - 1; 
 
-        // First pass: find the last occurrence of the target
         while (i <= j) {
-            int mid = (i + j) / 2; // midpoint
+            int mid = (i + j) / 2; 
 
             if (nums[mid] == target) {
-                arr[1] = mid; // Update last position
-                i = mid + 1; // Move to the right to find later occurrences
+                arr[1] = mid; 
+                i = mid + 1; 
             } else if (nums[mid] < target) {
-                i = mid + 1; // Move right
+                i = mid + 1; 
             } else {
-                j = mid - 1; // Move left
+                j = mid - 1; 
             }
         }
 
-        // Reset pointers for the second pass
         i = 0; 
         j = nums.length - 1;
 
-        // Second pass: find the first occurrence of the target
         while (i <= j) {
-            int mid = (i + j) / 2; //midpoint
+            int mid = (i + j) / 2; 
 
             if (nums[mid] == target) {
-                arr[0] = mid; // Update first position
-                j = mid - 1; // Move to the left to find earlier occurrences
+                arr[0] = mid; 
+                j = mid - 1; 
             } else if (nums[mid] < target) {
-                i = mid + 1; // Move right
+                i = mid + 1;
             } else {
-                j = mid - 1; // Move left
+                j = mid - 1; 
             }
         }
 
-        // Return the array containing the first and last positions
         return arr;
     }
 
@@ -73,7 +65,6 @@ public class Findfirstandlast {
 
         int target = sc.nextInt();
 
-        // Call the method to find first and last positions
         int[] answer = findFirstandLast(arr, target);
         
         for (int i : answer) {

@@ -10,38 +10,32 @@ import java.util.Scanner;
 
 public class Specialarray {
 
-    // Method to determine if the array is special and return the value of x
     public static int specialarray(int[] arr, int n) {
-        // Sort the array to facilitate counting
         Arrays.sort(arr);
 
-        // Initialize the search range for x
-        int st = 1; // Start of the range (1 because x must be at least 1)
-        int end = n; // End of the range (cannot be greater than n)
+        int st = 1; 
+        int end = n; 
 
-        // Perform binary search
         while (st <= end) {
-            int mid = st + (end - st) / 2; // Calculate the midpoint
-            int cnt = 0; // Counter for numbers >= mid
+            
+            int mid = st + (end - st) / 2; 
+            int cnt = 0; 
 
-            // Count how many numbers are greater than or equal to mid
             for (int i = 0; i < n; i++) {
                 if (arr[i] >= mid) {
                     cnt++;
                 }
             }
 
-            // Check if the count matches the mid value
             if (mid == cnt) {
-                return mid; // Found a special number x
+                return mid; 
             } else if (mid > cnt) {
-                end = mid - 1; // Search in the lower half
+                end = mid - 1; 
             } else {
-                st = mid + 1; // Search in the upper half
+                st = mid + 1; 
             }
         }
 
-        // If no special number is found, return -1
         return -1;
     }
 
@@ -55,7 +49,6 @@ public class Specialarray {
             arr[i] = sc.nextInt();
         }
 
-        // Call the method and print the result
         System.out.println(specialarray(arr, n));
     }
 }

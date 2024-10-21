@@ -1,3 +1,6 @@
+// Problem Statement: Given an array of integers nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
+// You may imagine that nums[-1] = nums[n] = -∞. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.
+
 import java.util.Scanner;
 
 class findPeakElement {
