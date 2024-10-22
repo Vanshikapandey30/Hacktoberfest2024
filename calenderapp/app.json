@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "rajcalender",
+    "slug": "rajcalender",
+    "version": "1.10.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "versionCode": 11,
+      "permissions": [
+        "INTERNET"
+      ],
+      "package": "com.vishalsharma4972.rajcalender"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "71594a96-69c8-48d8-9f80-41250a77ae55"
+      }
+    }
+  }
+}
