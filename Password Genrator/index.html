@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator & Strength</title>
+</head>
+<body>
+    
+    <div class="password-generator">
+        <h3>Generate <br><span> your Password</span></h3>
+        <div class="output-container">
+            <input type="number" id="intPass" placeholder="Enter Password length!" />
+            <input type="text" placeholder="Password" class="password-box" id="password-box" readonly />
+            <img class="copyimage" src="copy.png" alt="Copy Password" onclick="copyPassword()" />
+        </div>
+        <button class="generate-btn" onclick="createPassword()">Generate</button>
+    </div>
+
+    <script>
+        function generatePassword(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?';
+            let password = '';
+            
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                password += characters[randomIndex];
+            }
+
+            return password;
+        }
+
+        function createPassword() {
+            const num = parseInt(document.getElementById("intPass").value, 10); // Get the value and parse it as an integer
+            const password = generatePassword(num); // Generate password
+            document.getElementById("password-box").value = password; // Display password in the input field
+        }
+
+        function copyPassword() {
+            const password = document.getElementById("password-box").value;
+            
+            if (password) {
+                navigator.clipboard.writeText(password).then(function() {
+                    alert("Password copied to clipboard!");
+                }, function(err) {
+                    alert("Failed to copy the password!");
+                });
+            } else {
+                alert("No password generated yet!");
+            }
+        }
+    </script>
+
+</body>
+</html>

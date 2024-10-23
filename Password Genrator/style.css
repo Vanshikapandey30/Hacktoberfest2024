@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.password-generator {
+    background-color: #fff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+}
+
+h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h3 span {
+    color: #ff6347; /* Tomato color for emphasis */
+}
+
+.output-container {
+    margin-bottom: 20px;
+}
+
+input[type="number"], input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #ff6347;
+}
+
+button.generate-btn {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button.generate-btn:hover {
+    background-color: #ff4500; /* Darker tomato on hover */
+}
+
+img.copyimage {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: -30px;
+    vertical-align: middle;
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .password-generator {
+        max-width: 400px;
+        padding: 30px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    input[type="number"], input[type="text"] {
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    button.generate-btn {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        height: auto;
+    }
+
+    .password-generator {
+        max-width: 300px;
+        padding: 20px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    input[type="number"], input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    button.generate-btn {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    img.copyimage {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* For small mobile screens (like iPhone SE) */
+@media (max-width: 400px) {
+    .password-generator {
+        max-width: 280px;
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    input[type="number"], input[type="text"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button.generate-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
