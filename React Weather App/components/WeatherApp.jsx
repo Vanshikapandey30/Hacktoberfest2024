@@ -4,7 +4,7 @@ import Info1 from "./Info1";
 import Info2 from "./Info2";
 import Info3 from "./Info3";
 import { useState } from "react";
-import './style.css'
+import "./style.css";
 
 function WeatherApp() {
   const [weatherInfo, setWeatherInfo] = useState({
@@ -24,8 +24,8 @@ function WeatherApp() {
 
   return (
     <>
-      <div className='container'>
-        <div className="initials">Made by Dhruv Pal❤️</div>
+      <div className="container">
+        <div className="initials">Weather Information</div>
         <div className="topCont">
           <Logo />
           <Search updateWeatherInfo={updateWeatherInfo} />
@@ -35,10 +35,10 @@ function WeatherApp() {
           <Info2 info={weatherInfo} />
           <Info3 info={weatherInfo} />
         </div>
+        <div className="final">Made by Dhruv Pal❤️</div>
       </div>
     </>
   );
 }
 
 export default WeatherApp;
-
