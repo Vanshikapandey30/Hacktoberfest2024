@@ -1,0 +1,25 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    width: 380px;
+    height: 500px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: white;
+    border: 2px solid #2ecc71;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img {
+    padding: 0.5em;
+    max-width: 70%;
+}
