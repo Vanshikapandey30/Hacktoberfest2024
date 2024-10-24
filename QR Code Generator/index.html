@@ -1,50 +1,158 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fancy QR Code Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>QR Generator</h1>
-        <input type="text" id="text" placeholder="Enter URL or text">
-        <button onclick="generateQR()">Generate QR</button>
-        <div id="qrcode" class="hidden"></div>
-        <button onclick="downloadQR()" id="downloadBtn" class="hidden">Download QR</button>
+      <h1>QR Generator</h1>
+      <input type="text" id="text" placeholder="Enter URL or text" />
+      <button onclick="generateQR()">Generate QR</button>
+      <div id="qrcode" class="hidden"></div>
+      <button onclick="downloadQR()" id="downloadBtn" class="hidden">
+        Download QR
+      </button>
     </div>
 
     <script>
-        let qr;
-        function generateQR() {
-            const text = document.getElementById("text").value;
-            if (text) {
-                const qrContainer = document.getElementById("qrcode");
-                qrContainer.innerHTML = ''; // Clear previous QR code
-                qrContainer.classList.remove('hidden');
-                qrContainer.classList.add('fade-in');
-                
-                qr = new QRCode(qrContainer, {
-                    text: text,
-                    width: 200,
-                    height: 200
-                });
-                
-                document.getElementById("downloadBtn").classList.remove('hidden');
-                document.getElementById("downloadBtn").classList.add('fade-in');
-            }
+      let qr;
+      function generateQR() {
+        const text = document.getElementById("text").value;
+        if (!text) {
+          alert("Please enter a valid URL or text.");
+          return; // Exit the function if input is empty
+        }
+        if (text) {
+          const qrContainer = document.getElementById("qrcode");
+          qrContainer.innerHTML = ""; // Clear previous QR code
+          qrContainer.classList.remove("hidden");
+          qrContainer.classList.add("fade-in");
+
+          qr = new QRCode(qrContainer, {
+            text: text,
+            width: 200,
+            height: 200,
+          });
+
+          document.getElementById("downloadBtn").classList.remove("hidden");
+          document.getElementById("downloadBtn").classList.add("fade-in");
+        }
+      }
+
+      function downloadQR() {
+        const canvas = document.querySelector("#qrcode canvas");
+        const image = canvas
+          .toDataURL("image/png")
+          .replace("image/png", "image/octet-stream");
+        const link = document.createElement("a");
+        link.download = "qrcode.png";
+        link.href = image;
+        link.click();
+      }
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancy QR Code Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  </head>
+  <body>
+    <!-- <div class="container">
+      <h1>QR Generator</h1>
+      <input type="text" id="text" placeholder="Enter URL or text" />
+      <button onclick="generateQR()">Generate QR</button>
+      <div id="qrcode" class="hidden"></div>
+      <button onclick="downloadQR()" id="downloadBtn" class="hidden">
+        Download QR
+      </button>
+    </div> -->
+    <div class="container">
+      <h1>QR Generator</h1>
+      <input type="text" id="text" placeholder="Enter URL or text" />
+      <label for="fgColor">Foreground Color:</label>
+      <input type="color" id="fgColor" value="#000000" />
+
+      <label for="bgColor">Background Color:</label>
+      <input type="color" id="bgColor" value="#ffffff" />
+
+      <button onclick="generateQR()">Generate QR</button>
+      <div id="qrcode" class="hidden"></div>
+      <button onclick="downloadQR()" id="downloadBtn" class="hidden">
+        Download QR
+      </button>
+    </div>
+
+    <script>
+      let qr;
+      //   function generateQR() {
+      //     const text = document.getElementById("text").value;
+      //     if (!text) {
+      //       alert("Please enter a valid URL or text.");
+      //       return; // Exit the function if input is empty
+      //     }
+      //     if (text) {
+      //       const qrContainer = document.getElementById("qrcode");
+      //       qrContainer.innerHTML = ""; // Clear previous QR code
+      //       qrContainer.classList.remove("hidden");
+      //       qrContainer.classList.add("fade-in");
+
+      //       qr = new QRCode(qrContainer, {
+      //         text: text,
+      //         width: 200,
+      //         height: 200,
+      //       });
+
+      //       document.getElementById("downloadBtn").classList.remove("hidden");
+      //       document.getElementById("downloadBtn").classList.add("fade-in");
+      //     }
+      //   }
+      function generateQR() {
+        const text = document.getElementById("text").value.trim();
+        const fgColor = document.getElementById("fgColor").value;
+        const bgColor = document.getElementById("bgColor").value;
+
+        if (!text) {
+          alert("Please enter a valid URL or text.");
+          return;
         }
 
-        function downloadQR() {
-            const canvas = document.querySelector("#qrcode canvas");
-            const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-            const link = document.createElement('a');
-            link.download = 'qrcode.png';
-            link.href = image;
-            link.click();
-        }
+        const qrContainer = document.getElementById("qrcode");
+        qrContainer.innerHTML = ""; // Clear previous QR code
+        qrContainer.classList.remove("hidden");
+        qrContainer.classList.add("fade-in");
+
+        qr = new QRCode(qrContainer, {
+          text: text,
+          width: 200,
+          height: 200,
+          colorDark: fgColor, // Set foreground color
+          colorLight: bgColor, // Set background color
+        });
+
+        document.getElementById("downloadBtn").classList.remove("hidden");
+        document.getElementById("downloadBtn").classList.add("fade-in");
+      }
+
+      function downloadQR() {
+        const canvas = document.querySelector("#qrcode canvas");
+        const image = canvas
+          .toDataURL("image/png")
+          .replace("image/png", "image/octet-stream");
+        const link = document.createElement("a");
+        link.download = "qrcode.png";
+        link.href = image;
+        link.click();
+      }
     </script>
-</body>
+  </body>
 </html>

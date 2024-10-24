@@ -49,9 +49,9 @@ export default function Search({ updateWeatherInfo }) {
         onChange={searchInput}
         value={input}
         placeholder={error ? "No such place found" : "Search for cities"}
-        className='searchInput'
+        className="searchInput"
       />
-      <div className='searchBtn' onClick={handleSubmit}>
+      <div className="searchBtn" onClick={handleSubmit}>
         <SearchIcon className="SearchIcon" />
       </div>
     </>
