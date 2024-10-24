@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "JetBrains Mono", monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 .container {
   width: 100%;
   height: 100vh;
   /* background-color: #0b131e; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("../public/images/bgImg.jpg");
+    url("../images/bgImg.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -221,4 +221,8 @@ body {
 
 .Box1image img {
   height: 100%;
+}
+
+.suggestions-list{
+  color: white
 }

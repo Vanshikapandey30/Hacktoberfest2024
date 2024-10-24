@@ -1,5 +1,5 @@
 {
-  "name": "weatherapp",
+  "name": "y",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -29,9 +29,13 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "vite": "^5.3.4"
+    "vite": "^5.4.10"
   },
   "resolutions": {
     "styled-components": "^5"
-  }
+  },
+  "description": "This is a functional weather app made using react and vite. I have used the OpenWeatherMap API to get the weather data.<br>\r Preview - [WeatherApp](https://dpweatherappreact.netlify.app/)\r ## Screenshots",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }
