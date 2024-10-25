@@ -10,14 +10,6 @@ If all inputs meet the requirements, the form displays a success message.
 - Backend validation of form fields using PHP
 - Simple, user-friendly interface with clear error messages
 
-## Project Structure
-
-contact-form/ 
-├── index.html # The HTML form 
-├── styles.css # Styling for the form 
-├── script.js # JavaScript for AJAX and error handling 
-  └── process_form.php # PHP script for form validation
-
 
 ## Installation and Setup
 1. Clone the repo in your local system
