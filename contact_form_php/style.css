@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  label, input, textarea, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  #successMessage {
+    color: green;
+  }
+  
