@@ -1,107 +1,42 @@
-![image](https://github.com/user-attachments/assets/a6aee016-71e8-4f04-9e8e-1ed57761959b)
-
-Link to Register: https://hacktoberfest.com/
-
-You can check the label of this Repo by going to: Pull Requests -> Labels
-
-What can I contribute?
-
--DSA codes in any language.
-
--React for Beginners
-
-Create a separate directory for each contribution.
-## Contribution Instructions
-The simple contribution instructions are:
-
-- Star ⭐ & Fork 🍴 this Repository.
-- Create a directory under your GitHub Username.
-- Inside the directory, please have the list of static files.
-- Create a pull request using the PR template given.
-
-All the best for your Hacktoberfest Journey!
-
-## How to start Contributing and pull request
-
-**1.**  Fork [this](https://github.com/Vanshikapandey30/HacktoberFest2024.git) repository.
-
-**2.**  Clone your forked copy of the project.
-
-```
-git clone --depth 1 https://github.com/<your_name>/HactoberFest2024
-```
-
-**3.** Navigate to the project directory :file_folder: .
-
-```
-cd HacktoberFest2024
-```
-
-**4.** Add a reference(remote) to the original repository.
-
-```
-git remote add upstream https://github.com/Vanshikapandey30/HacktoberFest2024.git
-```
-
-**5.** Check the remotes for this repository.
-```
-git remote -v
-```
-
-**6.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository).
-
-```
-git pull upstream main
-```
-
-**7.** Create a new branch.
-
-```
-git checkout -b <your_branch_name>
-```
-
-**8.** Perform your desired changes to the code base.
+# $${\color{purple}School\space management\space System\space}$$ 
+*This project is a Java-based School Management System designed to streamline administrative tasks within educational institutions. It provides functionalities for managing students, teachers, courses, and attendance, aiming to simplify daily operations for school administrators.*
 
 
-**9.** Track your changes:heavy_check_mark: .
 
-```
-git add . 
-```
+# ${\color{aqua}Features:\space}$
 
-**10.** Commit your changes .
+📌**Student Management:** Add, update, and delete student records with total fees paid & received
 
-```
-git commit -m "Relevant message"
-```
+📌**Teacher Management:** Manage teacher id, name & salary
 
-**11.** Push the committed changes in your feature branch to your remote repo.
-```
-git push -u origin <your_branch_name>
-```
+📌**School Management:** Teacher data, student data, total money earned & total money spent on salary
 
-**12.** To create a pull request, click on `compare and pull requests`. Please ensure you compare your feature branch to the desired branch of the repository you are supposed to make a PR to.
+# ${\color{aqua}Getting\space Started:\space}$
+
+To run this application locally:
+
+🔗 ***Clone the repository:*** git clone https://github.com/vamus092/school_management_system.git
+
+*Open the project in your preferred IDE.
+Build and run the application.*
+
+# ${\color{aqua}\space Usage\space :\space}$
+
+🟣Upon launching, log in as an administrator to access all features.
+
+🟣Use the intuitive interface to navigate through student, teacher, and course management modules.
+
+🟣Record attendance and view reports as needed.
 
 
-**13.** Add appropriate title and description to your pull request explaining your changes and efforts done.
+# ${\color{aqua}\space Contributing\space :\space}$
 
+*Contributions are welcome! Feel free to open issues or submit pull requests to help improve this project*
 
-**14.** Click on `Create Pull Request`.
+# ${\color{aqua}\space License\space :\space}$
 
+*This project is licensed under the MIT License - see the LICENSE file for details.*
 
-**15** Voila!
+# ${\color{teal}TechStack:\space}$
 
-## Contribute
-Contributions are welcome! 
-
-## Rules
-- Pull requests can be submitted to any opted-in repository on GitHub or GitLab.
-- The pull request must contain commits you made yourself.
-- If a maintainer reports your pull request as spam, it will not be counted toward your participation in Hacktoberfest.
-- If a maintainer reports behavior that’s not in line with the project’s code of conduct, you will be ineligible to participate.
-- To get a shirt, you must make four approved pull requests (PRs) on opted-in projects between October 1-31 in any time zone.
-- This year, the first 55,000 participants can earn a T-shirt.
-
-A repository/project is considered to be participating in Hacktoberfest if the 'hacktoberfest' topic is present and is accepting public contributions via pull requests. An individual pull request can also be opted-in directly by adding the 'hacktoberfest-accepted' label.
-
-A pull request is considered approved once it has an overall approving review from maintainers, or has been merged by maintainers, or has been given the 'hacktoberfest-accepted' label. A pull request with any label containing the word 'spam' or 'invalid' will be considered ineligible for Hacktoberfest.
+![](https://img.shields.io/badge/JAVA-7a04eb)
