@@ -1,0 +1,28 @@
+/**
+ * Rotate an array 'n' times either to the left or right.
+ *
+ * @param {Array} arr - The array to be rotated.
+ * @param {number} n - The number of times to rotate the array.
+ * @param {string} direction - The direction of rotation, either 'left' or 'right'.
+ * @returns {Array} - The rotated array.
+ */
+function rotateArray(arr, n, direction = 'right') {
+    const length = arr.length;
+
+    if (!Array.isArray(arr) || length === 0) {
+        return 'Invalid input, please provide a valid array.';
+    }
+
+    n = n % length; // Normalize n if it's larger than array length
+    if (direction === 'left') {
+        return [...arr.slice(n), ...arr.slice(0, n)];
+    } else if (direction === 'right') {
+        return [...arr.slice(-n), ...arr.slice(0, -n)];
+    } else {
+        return 'Invalid direction, choose "left" or "right".';
+    }
+}
+
+// Example Usage
+const myArray = [1, 2, 3, 4, 5];
+console.log(rotateArray(myArray, 2, 'left'));  // Output: [3, 4, 5
