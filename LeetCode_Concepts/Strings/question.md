@@ -1,4 +1,4 @@
-# Leetcode String Questions 
+# Important Leetcode String Questions 
 
 ## Table of Contents
 1. ['Minimum number of swaps to make the string balanced'](#Q1)
@@ -6,11 +6,7 @@
 3. ['Permutation in String'](#Q3)
 4. ['Reverse Vowels Of a String'](#Q4)
 5. ['Greatest Common Divisor'](#Q5)
-6. ['Merge Strings Alternatively'](#Q6)
-7. ['Find the length of the longest common prefix'](#Q7)
-8. ['Extra Characters in a String'](#Q8)
-9. ['Different ways to add parenthesis'](#Q9)
-10. ['Reverse Words in a string'](#Q10)
+
 
 
 # #Q1 
@@ -40,7 +36,7 @@ The test cases are generated such that the output values fit in a 32-bit integer
 (2*((3-4)*5)) = -10 
 (((2*3)-4)*5) = 10
 
-<h2>Reference:</h2>
+<h3>Reference:</h3>
 https://leetcode.com/problems/different-ways-to-add-parentheses/description/
 
 
@@ -72,7 +68,7 @@ sentence2 can be turned to sentence1 by inserting "name is" between "My" and "Ha
 <h2>Explanation:</h2>
 No single sentence can be inserted inside one of the sentences to make it equal to the other.
 
-<h2>Reference:</h2>
+<h3>Reference:</h3>
 https://leetcode.com/problems/sentence-similarity-iii/description/
 
 
@@ -98,11 +94,53 @@ s2 contains one permutation of s1 ("ba").
 <h2>Input:</h2> s1 = "ab", s2 = "eidboaoo"
 <h2>Output:</h2> false
 
-<h2>Reference:</h2>
+<h3>Reference:</h3>
 https://leetcode.com/problems/permutation-in-string/description/
 
 
 
 # #Q4
 
-<h1></h1>
+<h1>Reverse Vowels Of a String</h1>
+Given a string s, reverse only all the vowels in the string and return it.
+
+The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.
+
+### Test Cases 
+<h2>Example 1:</h2>
+
+<h2>Input:</h2> s = "IceCreAm"
+<h2>Output:</h2> "AceCreIm"
+<h2>Explanation:</h2>
+The vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes "AceCreIm".
+
+<h2> Example 2:</h2>
+
+<h2>Input:</h2> s = "leetcode"
+<h2>Output:</h2> "leotcede"
+
+<h3>Reference:</h3>
+https://leetcode.com/problems/reverse-vowels-of-a-string/description/
+
+
+# #Q5
+
+<h1>Greatest Common Divisor</h1>
+
+For two strings s and t, we say "t divides s" if and only if s = t + t + t + ... + t + t (i.e., t is concatenated with itself one or more times).
+
+Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
+
+### Test Cases 
+<h2>Example 1:</h2>
+
+<h2>Input:</h2> str1 = "ABCABC", str2 = "ABC"
+<h2>Output:</h2> "ABC"
+
+<h2> Example 2:</h2>
+
+<h2>Input:</h2> str1 = "ABABAB", str2 = "ABAB"
+<h2>Output:</h2>  "AB"
+
+<h3>Reference:</h3>
+https://leetcode.com/problems/greatest-common-divisor-of-strings/description/
