@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.array-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 80%;
+    height: 400px;
+    margin: 20px 0;
+    background-color: #f0f0f0;
+}
+
+.array-bar {
+    width: 10px;
+    margin: 0 2px;
+    background-color: #4CAF50;
+}
