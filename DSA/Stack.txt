@@ -1,0 +1,37 @@
+#include <stdio.h>
+class stack {
+private:
+    LinkedList lst;
+public:
+    stack();
+    void push(int x);
+    int pop();
+    void print();
+    
+    
+};
+stack::stack(){}
+
+void stack::push(int x){
+    lst.addFront(x);
+    
+}
+
+int stack::pop(){
+    int x = lst[0];
+    return x;
+}
+
+void stack::print() {
+    lst.print();
+}
+
+int main()
+{
+    class stack stk;
+    stk.push(10);
+    stk.push(20);
+    stk.pop();
+    stk.push(30);
+    
+}
