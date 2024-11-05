@@ -6,6 +6,45 @@
     <title>Fancy QR Code Generator</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            text-align: center;
+            margin: 50px auto;
+        }
+        #text {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        #error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,13 +53,18 @@
         <button onclick="generateQR()">Generate QR</button>
         <div id="qrcode" class="hidden"></div>
         <button onclick="downloadQR()" id="downloadBtn" class="hidden">Download QR</button>
+        <p id="error" class="hidden">Please enter some text to generate QR code.</p>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </div>
 
     <script>
         let qr;
         function generateQR() {
             const text = document.getElementById("text").value;
+            const errorEl = document.getElementById("error");
+
             if (text) {
+                errorEl.classList.add('hidden');
                 const qrContainer = document.getElementById("qrcode");
                 qrContainer.innerHTML = ''; // Clear previous QR code
                 qrContainer.classList.remove('hidden');
@@ -34,6 +78,8 @@
                 
                 document.getElementById("downloadBtn").classList.remove('hidden');
                 document.getElementById("downloadBtn").classList.add('fade-in');
+            } else {
+                errorEl.classList.remove('hidden'); // Show error if input is empty
             }
         }
 
@@ -44,6 +90,10 @@
             link.download = 'qrcode.png';
             link.href = image;
             link.click();
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
         }
     </script>
 </body>
