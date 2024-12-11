@@ -1,0 +1,106 @@
+.form_container {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    background: white;
+    z-index: 9;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+
+/* prediction */
+input:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* upi id */
+input:first-child {
+    z-index: 10;
+    border-bottom: 1px solid #a7a7a762;
+}
+
+input {
+    font: 1.2em sans-serif;
+    width: 100%;
+    padding: 20px 10px;
+    color: #000;
+    border-color: transparent;
+    outline: none;
+    background: transparent;
+    /* border-bottom: 1px solid #a7a7a762; */
+}
+
+.form_container #input-box:focus {
+    outline: none;
+}
+
+.line {
+    width: 98%;
+    height: 1px;
+    background-color: rgb(139, 221, 139);
+}
+
+.btn {
+    background-color: rgb(55, 148, 55);
+    width: 100%;
+    margin-top: 20px;
+    padding: 0.5em;
+    border: none;
+    border-radius: .5em;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: green;
+}
+
+ul {
+    position: absolute;
+    width: calc(100% - 60px);
+    top: 80px;
+    left: 0px;
+    list-style-type: none;
+    overflow-y: scroll;
+    max-height: 140px;
+    background: white;
+}
+
+ul li {
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+li:hover {
+    background-color: rgba(120, 119, 118, 0.535);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
