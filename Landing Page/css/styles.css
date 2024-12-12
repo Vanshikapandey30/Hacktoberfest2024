@@ -1,0 +1,70 @@
+/* Basic styling for the landing page */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #1e1e1e;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .spline-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url('../assets/background-image.jpg') no-repeat center center/cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dim the background image */
+    z-index: 1;
+  }
+  
+  spline-viewer {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: none; /* Hide the default cursor */
+  }
+  
+  .content {
+    margin-top: 250px;
+    position: absolute;
+    text-align: center;
+    color: #49384a;
+    z-index: 3;
+  }
+  
+  .content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff4500;
+  }
+  
