@@ -1,0 +1,61 @@
+// Problem Statement: We have an array arr of non-negative integers. arr is considered special if there exists a number x such that there are exactly x numbers in arr that are greater than or equal to x.
+// Notice that x does not have to be an element in arr.Return x if the array is special; otherwise, return -1. It can be proven that if arr is special, the value for x is unique.
+
+// Input: arr = [3,5]
+// Output: 2
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class specialArray {
+
+    // Method to determine if the array is special and return the value of x
+    public static int specialarray(int[] arr, int n) {
+        // Sort the array to facilitate counting
+        Arrays.sort(arr);
+
+        // Initialize the search range for x
+        int st = 1; // Start of the range (1 because x must be at least 1)
+        int end = n; // End of the range (cannot be greater than n)
+
+        // Perform binary search
+        while (st <= end) {
+            int mid = st + (end - st) / 2; // Calculate the midpoint
+            int cnt = 0; // Counter for numbers >= mid
+
+            // Count how many numbers are greater than or equal to mid
+            for (int i = 0; i < n; i++) {
+                if (arr[i] >= mid) {
+                    cnt++;
+                }
+            }
+
+            // Check if the count matches the mid value
+            if (mid == cnt) {
+                return mid; // Found a special number x
+            } else if (mid > cnt) {
+                end = mid - 1; // Search in the lower half
+            } else {
+                st = mid + 1; // Search in the upper half
+            }
+        }
+
+        // If no special number is found, return -1
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Call the method and print the result
+        System.out.println(specialarray(arr, n));
+    }
+}
