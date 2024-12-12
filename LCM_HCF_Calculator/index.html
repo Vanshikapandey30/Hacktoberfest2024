@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container"></div>
+        <h1>HCF & LCM Calculator for N Numbers</h1>
+        <div id="input-container">
+            <label for="num1" style="color: crimson;">Enter numbers:</label>
+            <div class="number-input">
+                <input type="number" id="num1" placeholder="Number">
+            </div>
+        </div>
+        <button id="add-number">Add Another Number</button>
+        <button onclick="calculate()">Calculate</button>
+
+        <div class="result-section">
+            <p id="hcf-result">HCF: </p>
+            <p id="lcm-result">LCM: </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

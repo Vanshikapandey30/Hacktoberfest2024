@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+h1 {
+    margin-bottom: 20px;
+    color: crimson;
+    border: 3px solid black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.number-input {
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.result-section {
+    margin-top: 20px;
+}
+
+.result-section p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: rgb(178, 85, 85);
+}
+
+/* Style for HCF result */
+#hcf-result {
+    font-weight: bold;
+    color: #FF6347; /* Tomato color for HCF */
+    border: 2px solid black;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding-left: 40%;
+}
+
+/* Style for LCM result */
+#lcm-result {
+    font-weight: bold;
+    color: #4682B4; /* SteelBlue color for LCM */
+    border: 2px solid black;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding-left: 40%;
+}
+
+/* Style for the result numbers */
+.result-value {
+    font-weight: bold;
+    color: black; /* LimeGreen for result numbers */
+    padding-left: 10px;
+}
