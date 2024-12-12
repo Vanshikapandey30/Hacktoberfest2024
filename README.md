@@ -105,3 +105,8 @@ Contributions are welcome!
 A repository/project is considered to be participating in Hacktoberfest if the 'hacktoberfest' topic is present and is accepting public contributions via pull requests. An individual pull request can also be opted-in directly by adding the 'hacktoberfest-accepted' label.
 
 A pull request is considered approved once it has an overall approving review from maintainers, or has been merged by maintainers, or has been given the 'hacktoberfest-accepted' label. A pull request with any label containing the word 'spam' or 'invalid' will be considered ineligible for Hacktoberfest.
+
+<h2 align="center">Thanks to these amazing people!</h2>
+<a href="https://github.com/Vanshikapandey30/Hacktoberfest2024/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Vanshikapandey30/Hacktoberfest2024" />
+</a>
