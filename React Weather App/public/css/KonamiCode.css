@@ -1,0 +1,13 @@
+.konami-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.konami-text {
+    color: white; /* Texte en blanc */
+    font-size: 3rem;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
